@@ -84,7 +84,7 @@ export default class App extends React.PureComponent {
       >
         <ThemeProvider theme={this.state.theme === 'light' ? light : dark}>
           <SafeAreaProvider>
-            <Bg forceInset={{ bottom: 'never', top: 'always' }}>
+            <Bg>
               <AppNavigator />
             </Bg>
           </SafeAreaProvider>

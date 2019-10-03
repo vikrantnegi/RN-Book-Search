@@ -68,6 +68,7 @@ export const Flat = styled(Scroll)`
 
 export const Body = styled.Text`
   font-size: ${theme('size')};
+  font-weight: ${theme('fontWeight')};
   color: ${theme('colors')};
   margin-bottom: ${theme('spacing')};
   margin-top: ${props => props.marginTop || 0};
@@ -80,15 +81,16 @@ export const Body = styled.Text`
 
 export const Input = styled.TextInput`
   height: ${props => props.theme.height.input};
-  border-bottom-color: ${props => props.theme.colors.shadow};
-  border-bottom-width: 1px;
+  border-color: ${props => props.theme.colors.shadow};
+  background-color: ${props => props.theme.colors.shadow};
+  border-radius: 5;
+  border-width: 2px;
+  padding-horizontal: ${theme('spacing')};
   margin-bottom: ${theme('spacing')};
   color: ${theme('colors')};
   text-align-vertical: top;
   align-self: stretch;
 `;
-
-export const Heading = styled(Body)``;
 
 export const Button = styled.TouchableOpacity`
   align-items: center;

@@ -5,7 +5,7 @@ export const ThemeContext = React.createContext(null);
 const colors = {
   white: '#FFFFFF',
   bg: '#FAFAFA',
-  primary: '#40E0D0',
+  primary: '#5e72e4',
   default: '#333333',
   placeholder: '#9B9B9B',
   shadow: '#dddddd',
@@ -53,7 +53,7 @@ const size = {
   stiny: 10,
   tiny: 12,
   default: 14,
-  medium: 16,
+  medium: 20,
   large: 24,
   xlarge: 32,
   xxlarge: 46,

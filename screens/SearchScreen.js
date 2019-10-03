@@ -19,15 +19,24 @@ import {
   Scroll,
   Spacer,
 } from '../components/styled';
+import Logo from '../components/Logo';
+import AppConfig from '../config/appConfig';
 
 export default class SearchScreen extends React.Component {
+  state = {
+    text: '',
+  };
+
   render() {
     return (
-      <Wrapper normal style={{}}>
-        <Body>Hello</Body>
+      <Wrapper normal center style={{}}>
+        <Logo />
+        <Input
+          value={this.state.text}
+          placeholder="Search Books"
+          onChangeText={changedText => this.setState({ text: changedText })}
+        />
       </Wrapper>
     );
   }
 }
-
-const styles = StyleSheet.create({});
