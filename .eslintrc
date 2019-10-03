@@ -1,0 +1,15 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "no-use-before-define": 0,
+    "no-console": 2,
+    "prettier/prettier": ["error"],
+    "react/destructuring-assignment": [
+      true,
+      "always",
+      {
+        "ignoreClassFields": true
+      }
+    ]
+  }
+}
