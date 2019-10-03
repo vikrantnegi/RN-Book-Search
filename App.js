@@ -1,19 +1,95 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Platform, StatusBar } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { ThemeProvider } from 'styled-components';
+import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
+import * as Icon from '@expo/vector-icons';
+import { AppLoading } from 'expo';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import theme, { ThemeContext } from './config/theme';
+import { Bg } from './components/styled';
+import AppNavigator from './navigation/AppNavigator';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const _makeTheme = (type = 'light') => ({
+  ...theme(type),
 });
+
+const dark = _makeTheme('dark');
+const light = _makeTheme('light');
+
+export default class App extends React.PureComponent {
+  state = {
+    isLoadingComplete: false,
+    hasHydrated: false,
+    theme: 'light',
+  };
+
+  componentDidMount() {
+    return Platform.OS === 'ios' && this._changeStatusBarStyle();
+  }
+
+  toggleTheme = () => {
+    this.setState(
+      ({ theme }) => ({
+        theme: theme === 'light' ? 'dark' : 'light',
+      }),
+      this._changeStatusBarStyle
+    );
+  };
+
+  _changeStatusBarStyle = () => {
+    StatusBar.setBarStyle(
+      this.state.theme === 'light' ? 'default' : 'light-content'
+    );
+  };
+
+  _loadResourcesAsync = async () =>
+    Promise.all([
+      Font.loadAsync({
+        // This is the font that we are using for our tab bar
+        ...Icon.Ionicons.font,
+        // We include SpaceMono because we use it in HomeScreen.js. Feel free
+        // to remove this if you are not using it in your app
+      }),
+    ]);
+
+  _handleLoadingError = error => {
+    // In this case, you might want to report the error to your error
+    // reporting service, for example Sentry
+    console.warn(error);
+  };
+
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true, hasHydrated: true });
+  };
+
+  render() {
+    const { isLoadingComplete, hasHydrated } = this.state;
+
+    if (!isLoadingComplete && !hasHydrated) {
+      return (
+        <AppLoading
+          startAsync={this._loadResourcesAsync}
+          onError={this._handleLoadingError}
+          onFinish={this._handleFinishLoading}
+        />
+      );
+    }
+    return (
+      <ThemeContext.Provider
+        value={{ theme: this.state.theme, toggleTheme: this.toggleTheme }}
+      >
+        <ThemeProvider theme={this.state.theme === 'light' ? light : dark}>
+          <SafeAreaProvider>
+            <Bg forceInset={{ bottom: 'never', top: 'always' }}>
+              <AppNavigator />
+            </Bg>
+          </SafeAreaProvider>
+        </ThemeProvider>
+      </ThemeContext.Provider>
+    );
+  }
+}
