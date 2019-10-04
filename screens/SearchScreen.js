@@ -29,7 +29,7 @@ export default class SearchScreen extends React.Component {
   };
 
   searchBooks = () => {
-    this.props.navigation.navigate('Results', {
+    this.props.navigation.navigate('Result', {
       searchQuery: this.state.text,
     });
   };
