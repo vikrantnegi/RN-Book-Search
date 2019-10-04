@@ -9,8 +9,8 @@ import { Body } from './styled';
 const Logo = ({ style, ...props }) => (
   <View style={[{ alignItems: 'center', marginBottom: 20 }, style]}>
     <Svg
-      width={responsiveHeight(15)}
-      height={responsiveHeight(15)}
+      width={responsiveHeight(18)}
+      height={responsiveHeight(18)}
       viewBox="0 0 336 263"
     >
       <Path

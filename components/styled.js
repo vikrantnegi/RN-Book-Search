@@ -79,17 +79,17 @@ export const Body = styled.Text`
     props.marginRight ? props.theme.spacing.default : 0};
 `;
 
-export const Input = styled.TextInput`
+export const Input = styled.TextInput.attrs({
+  placeholderTextColor: '#9B9B9B',
+})`
   height: ${props => props.theme.height.input};
-  border-color: ${props => props.theme.colors.shadow};
+  color: ${props => props.theme.colors.default};
   background-color: ${props => props.theme.colors.shadow};
   border-radius: 5;
-  border-width: 2px;
   padding-horizontal: ${theme('spacing')};
-  margin-bottom: ${theme('spacing')};
-  color: ${theme('colors')};
   text-align-vertical: top;
   align-self: stretch;
+  font-size: ${theme('size')};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -101,18 +101,4 @@ export const Button = styled.TouchableOpacity`
   margin-top: ${theme('spacing')};
   margin-right: ${props =>
     props.marginRight ? props.theme.spacing.default : 0}
-`;
-
-const Shadow = styled.View`
-  shadow-color: ${props => props.theme.colors.shadow};
-  shadow-offset: 0px 0px;
-  shadow-radius: 4px;
-`;
-
-export const Header = styled.View`
-  height: ${props => props.theme.height.header};
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-horizontal: ${theme('spacing')};
 `;

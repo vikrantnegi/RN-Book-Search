@@ -6,7 +6,6 @@ const colors = {
   white: '#FFFFFF',
   bg: '#FAFAFA',
   primary: '#5e72e4',
-  default: '#333333',
   placeholder: '#9B9B9B',
   shadow: '#dddddd',
   subheading: '#6D6D6D',
@@ -14,6 +13,7 @@ const colors = {
   loadingBg: 'rgba(255, 255, 255, 0.85)',
   tabBar: 'white',
   noBg: 'transparent',
+  default: '#333333',
 };
 
 const colorsDark = {
@@ -53,7 +53,7 @@ const size = {
   stiny: 10,
   tiny: 12,
   default: 14,
-  medium: 20,
+  medium: 18,
   large: 24,
   xlarge: 32,
   xxlarge: 46,
@@ -61,7 +61,7 @@ const size = {
 };
 
 const height = {
-  input: 40,
+  input: 50,
   tabBar: 60,
   header: 60,
 };

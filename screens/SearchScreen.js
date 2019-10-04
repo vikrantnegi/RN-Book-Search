@@ -11,7 +11,6 @@ import {
 
 import {
   Body,
-  Heading,
   Wrapper,
   LoginWrapper,
   Input,
@@ -32,8 +31,9 @@ export default class SearchScreen extends React.Component {
       <Wrapper normal center style={{}}>
         <Logo />
         <Input
+          medium
           value={this.state.text}
-          placeholder="Search Books"
+          placeholder="Search Books..."
           onChangeText={changedText => this.setState({ text: changedText })}
         />
       </Wrapper>
