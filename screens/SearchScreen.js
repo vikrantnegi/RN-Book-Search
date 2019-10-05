@@ -1,31 +1,13 @@
 import React from 'react';
-import {
-  Keyboard,
-  FlatList,
-  TouchableOpacity,
-  Image,
-  View,
-  Text,
-  StyleSheet,
-  Platform,
-} from 'react-native';
+import { TouchableOpacity, View, Platform } from 'react-native';
 import * as Icon from '@expo/vector-icons';
 
-import {
-  Body,
-  Wrapper,
-  LoginWrapper,
-  Input,
-  Button,
-  Scroll,
-  Spacer,
-} from '../components/styled';
+import { Wrapper, Input } from '../components/styled';
 import Logo from '../components/Logo';
-import AppConfig from '../config/appConfig';
 
 export default class SearchScreen extends React.Component {
   state = {
-    text: '',
+    text: 'Dan brown',
   };
 
   searchBooks = () => {
