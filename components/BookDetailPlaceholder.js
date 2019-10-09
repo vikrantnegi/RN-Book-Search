@@ -36,6 +36,7 @@ const BookCardPlaceholderComponent = () => (
       <PlaceholderLine width={75} />
       <PlaceholderLine style={{ marginTop: responsiveHeight(1) }} width={30} />
       <PlaceholderLine width={75} />
+      <PlaceholderLine style={{ marginTop: responsiveHeight(1) }} width={50} />
     </Placeholder>
     <Placeholder Animation={ShineOverlay}>
       <PlaceholderLine style={{ marginTop: responsiveHeight(0.5) }} />

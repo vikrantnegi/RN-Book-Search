@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  Platform,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Progress from 'react-native-progress';
 import ProgressiveImage from 'react-native-image-progress';
@@ -17,6 +9,8 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+
+import { Body, Rate } from './styled';
 
 class BookDetailComponent extends Component {
   _openLinkToBook = async linkType => {
@@ -60,8 +54,13 @@ class BookDetailComponent extends Component {
         publisher,
         description,
         images: { medium, large },
+        averageRating,
       },
     } = this.props;
+
+    const rating = averageRating ? (
+      <Rate starSize={30} rating={averageRating} />
+    ) : null;
 
     return (
       <ScrollView
@@ -103,6 +102,7 @@ class BookDetailComponent extends Component {
               </Text>
               <Text style={styles.detailsHeading}>Publisher</Text>
               <Text style={styles.details}>{publisher}</Text>
+              {rating}
             </View>
           </View>
           <Text style={styles.lyrics}>{description}</Text>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   albumImage: {
     height: responsiveHeight(25),
     width: '40%',
-    marginRight: 25,
+    marginRight: 10,
   },
   detailsHeading: { marginBottom: 3 },
   details: {
