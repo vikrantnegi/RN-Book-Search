@@ -67,28 +67,32 @@ class BookDetailComponent extends Component {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          padding: 4,
+          padding: 10,
         }}
       >
-        <View style={{ flex: 1, paddingLeft: 19, paddingRight: 19 }}>
+        <View style={{ flex: 1 }}>
           <View
             style={{
               flex: 1,
               flexDirection: 'row',
               justifyContent: 'flex-start',
-              marginBottom: 20,
+              marginBottom: 15,
             }}
           >
-            <Image
-              style={styles.albumImage}
+            <ProgressiveImage
               source={{ uri: medium === null ? thumbnail : medium }}
+              style={styles.albumImage}
+              indicator={Progress.Circle}
+              resizeMode="contain"
+              blurRadius={0}
+              indicatorProps={{
+                size: 28,
+              }}
             />
             <View
               style={{
-                flexDirection: 'column',
                 flex: 1,
                 alignSelf: 'center',
-                paddingRight: 10,
               }}
             >
               <Text style={styles.detailsHeading}>Title</Text>
@@ -127,9 +131,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   albumImage: {
-    height: responsiveHeight(30),
+    height: responsiveHeight(25),
     width: '40%',
-    resizeMode: 'contain',
     marginRight: 25,
   },
   detailsHeading: { marginBottom: 3 },
