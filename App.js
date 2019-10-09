@@ -84,9 +84,7 @@ export default class App extends React.PureComponent {
       >
         <ThemeProvider theme={this.state.theme === 'light' ? light : dark}>
           <SafeAreaProvider>
-            <Bg>
-              <AppNavigator />
-            </Bg>
+            <AppNavigator />
           </SafeAreaProvider>
         </ThemeProvider>
       </ThemeContext.Provider>
