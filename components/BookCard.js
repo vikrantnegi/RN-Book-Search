@@ -6,9 +6,19 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+import { Body, Rate } from './styled';
 
 const BookCardComponent = props => {
-  const { thumbnail, title, authors, publisher, onPress } = props;
+  const {
+    thumbnail,
+    title,
+    authors,
+    publisher,
+    averageRating,
+    onPress,
+  } = props;
+
+  console.log(averageRating);
 
   return (
     <TouchableOpacity
@@ -48,46 +58,16 @@ const BookCardComponent = props => {
       <View
         style={{
           flex: 3,
-          padding: 4,
-          backgroundColor: 'transparent',
+          padding: 5,
         }}
       >
-        <View
-          style={{
-            padding: 2,
-            marginBottom: 2,
-            backgroundColor: 'transparent',
-          }}
-        >
-          <Text numberOfLines={1} ellipsizeMode="tail">
-            {title}
-          </Text>
-        </View>
-
-        <View
-          style={{
-            padding: 2,
-            marginTop: responsiveHeight(2),
-            marginVertical: 2,
-            backgroundColor: 'transparent',
-          }}
-        >
-          <Text numberOfLines={1} ellipsizeMode="tail">
-            {authors}
-          </Text>
-        </View>
-
-        <View
-          style={{
-            padding: 2,
-            marginTop: 2,
-            backgroundColor: 'transparent',
-          }}
-        >
-          <Text numberOfLines={1} ellipsizeMode="tail">
-            {publisher}
-          </Text>
-        </View>
+        <Body medium bold>
+          {title}
+        </Body>
+        <Body numberOfLines={1} ellipsizeMode="tail">
+          by {authors}
+        </Body>
+        <Rate rating={averageRating} />
       </View>
     </TouchableOpacity>
   );
