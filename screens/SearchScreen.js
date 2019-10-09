@@ -1,8 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, View, Platform } from 'react-native';
+import { TouchableOpacity, Platform } from 'react-native';
 import * as Icon from '@expo/vector-icons';
 
-import { Wrapper, Input } from '../components/styled';
+import { Wrapper, Input, Row } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
@@ -18,13 +18,9 @@ export default class SearchScreen extends React.Component {
 
   render() {
     return (
-      <Wrapper normal center>
+      <Wrapper normal style={{ justifyContent: 'center' }}>
         <Logo />
-        <View
-          style={{
-            flexDirection: 'row',
-          }}
-        >
+        <Row>
           <Input
             medium
             value={this.state.text}
@@ -53,7 +49,7 @@ export default class SearchScreen extends React.Component {
               style={{ marginBottom: -3 }}
             />
           </TouchableOpacity>
-        </View>
+        </Row>
       </Wrapper>
     );
   }
