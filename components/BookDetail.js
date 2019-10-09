@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Progress from 'react-native-progress';
 import ProgressiveImage from 'react-native-image-progress';
@@ -10,17 +10,16 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-import { Body, Rate } from './styled';
+import { Body, Rate, Wrapper } from './styled';
 
 class BookDetailComponent extends Component {
   _openLinkToBook = async linkType => {
     const { bookData } = this.props;
-    console.log(bookData);
 
     await WebBrowser.openBrowserAsync(bookData[linkType]);
   };
 
-  _renderViewMoreLess = (onPress, viewText) => (
+  _renderViewMoreLess = (onPress, viewBody) => (
     <TouchableBounce
       onPress={() => onPress()}
       style={{
@@ -34,13 +33,13 @@ class BookDetailComponent extends Component {
         backgroundColor: '#FFF',
       }}
     >
-      <Text
+      <Body
         style={{
           color: '#000',
         }}
       >
-        {viewText}
-      </Text>
+        {viewBody}
+      </Body>
     </TouchableBounce>
   );
 
@@ -69,7 +68,7 @@ class BookDetailComponent extends Component {
           padding: 10,
         }}
       >
-        <View style={{ flex: 1 }}>
+        <Wrapper>
           <View
             style={{
               flex: 1,
@@ -94,18 +93,28 @@ class BookDetailComponent extends Component {
                 alignSelf: 'center',
               }}
             >
-              <Text style={styles.detailsHeading}>Title</Text>
-              <Text style={styles.details}>{title}</Text>
-              <Text style={styles.detailsHeading}>Author</Text>
-              <Text style={styles.details}>
+              <Body small style={styles.detailsHeading}>
+                Title
+              </Body>
+              <Body medium style={styles.details}>
+                {title}
+              </Body>
+              <Body small style={styles.detailsHeading}>
+                Author
+              </Body>
+              <Body medium style={styles.details}>
                 {authors} ({publishedDate})
-              </Text>
-              <Text style={styles.detailsHeading}>Publisher</Text>
-              <Text style={styles.details}>{publisher}</Text>
+              </Body>
+              <Body small style={styles.detailsHeading}>
+                Publisher
+              </Body>
+              <Body medium style={styles.details}>
+                {publisher}
+              </Body>
               {rating}
             </View>
           </View>
-          <Text style={styles.lyrics}>{description}</Text>
+          <Body style={styles.lyrics}>{description}</Body>
 
           <TouchableBounce
             onPress={() => this._openLinkToBook('infoLink')}
@@ -120,7 +129,7 @@ class BookDetailComponent extends Component {
           >
             <ExpoIcon.Ionicons name="ios-cart" />
           </TouchableBounce>
-        </View>
+        </Wrapper>
       </ScrollView>
     );
   }
@@ -138,11 +147,10 @@ const styles = StyleSheet.create({
   detailsHeading: { marginBottom: 3 },
   details: {
     marginBottom: 15,
-    fontSize: 16,
   },
   lyrics: {
-    lineHeight: 22,
     paddingBottom: 20,
+    lineHeight: 22,
   },
 });
 
