@@ -1,4 +1,5 @@
 import React from 'react';
+import { Share } from 'react-native';
 import { createAppContainer, DrawerItems } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
@@ -29,6 +30,17 @@ const MainStack = createStackNavigator({
   },
   BookDetail: {
     screen: BookDetailScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerRight: (
+        <Ionicons
+          name="md-share"
+          title="Share"
+          size={24}
+          style={{ marginRight: 10, padding: 10 }}
+          onPress={() => {}}
+        />
+      ),
+    }),
   },
 });
 
