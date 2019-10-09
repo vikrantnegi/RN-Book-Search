@@ -50,7 +50,8 @@ const textAlign = {
 const size = {
   stiny: 10,
   tiny: 12,
-  default: 14,
+  small: 14,
+  default: 16,
   medium: 18,
   large: 24,
   xlarge: 32,
