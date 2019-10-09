@@ -1,7 +1,6 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
 
-import { Input } from '../components/styled';
+import { Input, Wrapper, Flat } from '../components/styled';
 import AppConfig from '../config/appConfig';
 import { fetchDataHandler } from '../utils/utils';
 import BookCardComponent from '../components/BookCard';
@@ -35,6 +34,7 @@ export default class ResultScreen extends React.Component {
           publishedDate,
           description,
           imageLinks,
+          averageRating,
         },
         id: bookId,
       } = book;
@@ -47,6 +47,7 @@ export default class ResultScreen extends React.Component {
         publisher: publisher ? publisher.toString().replace(/"/g, '') : '-',
         publishedDate: publishedDate ? publishedDate.substring(0, 4) : '-',
         description: description || 'No Description',
+        averageRating,
       };
     });
 
@@ -57,7 +58,14 @@ export default class ResultScreen extends React.Component {
   };
 
   _renderBookComponent = ({ item }) => {
-    const { thumbnail, title, authors, publisher, bookId } = item;
+    const {
+      thumbnail,
+      title,
+      authors,
+      publisher,
+      bookId,
+      averageRating,
+    } = item;
 
     return (
       <BookCardComponent
@@ -66,6 +74,7 @@ export default class ResultScreen extends React.Component {
         authors={authors}
         publisher={publisher}
         thumbnail={thumbnail}
+        averageRating={averageRating}
         onPress={() =>
           this.props.navigation.navigate('BookDetail', {
             bookDetails: item,
@@ -83,7 +92,8 @@ export default class ResultScreen extends React.Component {
 
     return (
       <React.Fragment>
-        <FlatList
+        <Flat
+          noMargin
           data={booksList}
           renderItem={this._renderBookComponent}
           keyExtractor={item => item.bookId}
@@ -96,7 +106,7 @@ export default class ResultScreen extends React.Component {
     const { isDataFetched } = this.state;
 
     return (
-      <View style={{ flex: 1, paddingHorizontal: 10 }}>
+      <Wrapper>
         <Input
           medium
           value={this.state.text}
@@ -108,7 +118,7 @@ export default class ResultScreen extends React.Component {
           }}
         />
         {isDataFetched ? this.renderX() : this.renderPlaceholders()}
-      </View>
+      </Wrapper>
     );
   }
 }

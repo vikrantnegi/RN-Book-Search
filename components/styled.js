@@ -1,7 +1,7 @@
 import { KeyboardAvoidingView, FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { mapToTheme as theme } from 'styled-map';
-import SafeAreaView from 'react-native-safe-area-view';
+import StarRating from 'react-native-star-rating';
 
 export const Row = styled.View`
   flex-direction: row;
@@ -30,21 +30,9 @@ export const Spacer = styled(Block)`
 
 export const Wrapper = styled.View`
   flex: 1;
-  align-items: ${theme('flexAlign')};
-  justify-content: ${theme('flexAlign')};
   padding-horizontal: ${theme('spacing')};
   background-color: ${props => props.theme.colors.bg};
 `;
-
-export const Bg = styled.View`
-  flex: 1;
-  background-color: ${props => props.theme.colors.bg};
-`.withComponent(SafeAreaView);
-
-export const LoginWrapper = styled(Wrapper)`
-  padding-horizontal: 0;
-  width: 260px;
-`.withComponent(KeyboardAvoidingView);
 
 export const FullScreenWrapper = styled(Wrapper)`
   position: absolute;
@@ -101,4 +89,19 @@ export const Button = styled.TouchableOpacity`
   margin-top: ${theme('spacing')};
   margin-right: ${props =>
     props.marginRight ? props.theme.spacing.default : 0}
+`;
+
+export const Rate = styled(StarRating).attrs(props => ({
+  disabled: true,
+  maxStars: 5,
+  fullStarColor: '#f1c40f',
+  starSize: 20,
+  iconSet: 'Ionicons',
+  emptyStar: 'ios-star-outline',
+  fullStar: 'ios-star',
+  halfStar: 'ios-star-half',
+  containerStyle: { justifyContent: 'flex-start' },
+  starStyle: { marginHorizontal: 1 },
+}))`
+  align-items: flex-start;
 `;
