@@ -3,14 +3,9 @@ import { View, ScrollView, StyleSheet } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Progress from 'react-native-progress';
 import ProgressiveImage from 'react-native-image-progress';
-import * as ExpoIcon from '@expo/vector-icons';
-import TouchableBounce from 'react-native/Libraries/Components/Touchable/TouchableBounce';
-import {
-  responsiveHeight,
-  responsiveWidth,
-} from 'react-native-responsive-dimensions';
-
-import { Body, Rate, Wrapper } from './styled';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
+import ReadMore from 'react-native-read-more-text';
+import { Body, Rate, Wrapper, Button } from './styled';
 
 class BookDetailComponent extends Component {
   _openLinkToBook = async linkType => {
@@ -19,28 +14,16 @@ class BookDetailComponent extends Component {
     await WebBrowser.openBrowserAsync(bookData[linkType]);
   };
 
-  _renderViewMoreLess = (onPress, viewBody) => (
-    <TouchableBounce
-      onPress={() => onPress()}
-      style={{
-        alignItems: 'center',
-        width: responsiveWidth(20),
-        borderRadius: 40,
-        marginTop: responsiveHeight(2),
-        marginBottom: responsiveHeight(1),
-        marginLeft: responsiveWidth(66),
-        paddingVertical: 4,
-        backgroundColor: '#FFF',
-      }}
-    >
-      <Body
-        style={{
-          color: '#000',
-        }}
-      >
-        {viewBody}
-      </Body>
-    </TouchableBounce>
+  _renderTruncatedFooter = handlePress => (
+    <Body marginTop={5} primary onPress={handlePress}>
+      Read more
+    </Body>
+  );
+
+  _renderRevealedFooter = handlePress => (
+    <Body marginTop={5} primary onPress={handlePress}>
+      Show less
+    </Body>
   );
 
   render() {
@@ -66,12 +49,12 @@ class BookDetailComponent extends Component {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           padding: 10,
+          flexGrow: 1,
         }}
       >
         <Wrapper>
           <View
             style={{
-              flex: 1,
               flexDirection: 'row',
               justifyContent: 'flex-start',
               marginBottom: 15,
@@ -114,21 +97,22 @@ class BookDetailComponent extends Component {
               {rating}
             </View>
           </View>
-          <Body style={styles.lyrics}>{description}</Body>
-
-          <TouchableBounce
-            onPress={() => this._openLinkToBook('infoLink')}
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 4,
-              borderRadius: 100,
-              marginTop: 8,
-            }}
+          <ReadMore
+            numberOfLines={5}
+            renderTruncatedFooter={this._renderTruncatedFooter}
+            renderRevealedFooter={this._renderRevealedFooter}
           >
-            <ExpoIcon.Ionicons name="ios-cart" />
-          </TouchableBounce>
+            <Body style={styles.cardText}>{description}</Body>
+          </ReadMore>
+          <Button
+            primary
+            width="100%"
+            onPress={() => this._openLinkToBook('infoLink')}
+          >
+            <Body white center noMargin>
+              Read on Play Store
+            </Body>
+          </Button>
         </Wrapper>
       </ScrollView>
     );
@@ -148,9 +132,9 @@ const styles = StyleSheet.create({
   details: {
     marginBottom: 15,
   },
-  lyrics: {
-    paddingBottom: 20,
-    lineHeight: 22,
+  cardText: {
+    marginBottom: 20,
+    lineHeight: 25,
   },
 });
 
