@@ -1,20 +1,11 @@
 import React from 'react';
 import { FlatList, View } from 'react-native';
-import {
-  Placeholder,
-  PlaceholderMedia,
-  PlaceholderLine,
-  ShineOverlay,
-} from 'rn-placeholder';
-import {
-  responsiveHeight,
-  responsiveWidth,
-} from 'react-native-responsive-dimensions';
 
 import { Input } from '../components/styled';
 import AppConfig from '../config/appConfig';
 import { fetchDataHandler } from '../utils/utils';
 import BookCardComponent from '../components/BookCard';
+import BookCardPlaceholder from '../components/BookCardPlaceholder';
 
 const { apiEndPoint } = AppConfig;
 
@@ -75,43 +66,17 @@ export default class ResultScreen extends React.Component {
         authors={authors}
         publisher={publisher}
         thumbnail={thumbnail}
-        onPress={() => {}}
+        onPress={() =>
+          this.props.navigation.navigate('BookDetail', {
+            bookDetails: item,
+          })
+        }
       />
     );
   };
 
   renderPlaceholders = () =>
-    this.state.booksList.map((e, i) => (
-      <Placeholder
-        key={i}
-        Animation={ShineOverlay}
-        style={{
-          marginVertical: 6,
-          borderRadius: 4,
-        }}
-        Left={props => (
-          <PlaceholderMedia
-            style={[
-              props.style,
-              {
-                width: responsiveWidth(22),
-                height: responsiveHeight(16),
-              },
-            ]}
-          />
-        )}
-      >
-        <PlaceholderLine
-          style={{ marginTop: responsiveHeight(1) }}
-          width={80}
-        />
-        <PlaceholderLine
-          style={{ marginTop: responsiveHeight(2) }}
-          width={50}
-        />
-        <PlaceholderLine width={80} />
-      </Placeholder>
-    ));
+    this.state.booksList.map((e, i) => <BookCardPlaceholder key={i} />);
 
   renderX = () => {
     const { booksList } = this.state;
@@ -139,6 +104,7 @@ export default class ResultScreen extends React.Component {
           onChangeText={changedText => this.setState({ text: changedText })}
           style={{
             marginBottom: 10,
+            marginTop: 10,
           }}
         />
         {isDataFetched ? this.renderX() : this.renderPlaceholders()}
