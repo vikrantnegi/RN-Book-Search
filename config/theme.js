@@ -10,8 +10,6 @@ const colors = {
   shadow: '#dddddd',
   subheading: '#6D6D6D',
   error: 'rgba(242, 49, 76, 1)',
-  loadingBg: 'rgba(255, 255, 255, 0.85)',
-  tabBar: 'white',
   noBg: 'transparent',
   default: '#333333',
 };
