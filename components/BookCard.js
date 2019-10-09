@@ -18,7 +18,7 @@ const BookCardComponent = props => {
     onPress,
   } = props;
 
-  console.log(averageRating);
+  const rating = averageRating ? <Rate rating={averageRating} /> : null;
 
   return (
     <TouchableOpacity
@@ -67,7 +67,7 @@ const BookCardComponent = props => {
         <Body numberOfLines={1} ellipsizeMode="tail">
           by {authors}
         </Body>
-        <Rate rating={averageRating} />
+        {rating}
       </View>
     </TouchableOpacity>
   );

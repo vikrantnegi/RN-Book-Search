@@ -29,9 +29,13 @@ const BookCardPlaceholderComponent = () => (
       />
     )}
   >
-    <PlaceholderLine style={{ marginTop: responsiveHeight(1) }} width={80} />
-    <PlaceholderLine style={{ marginTop: responsiveHeight(2) }} width={50} />
-    <PlaceholderLine width={80} />
+    <PlaceholderLine
+      style={{ marginTop: responsiveHeight(1) }}
+      width={80}
+      height={20}
+    />
+    <PlaceholderLine style={{ marginTop: responsiveHeight(1.5) }} width={50} />
+    <PlaceholderLine width={50} />
   </Placeholder>
 );
 
