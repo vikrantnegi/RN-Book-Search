@@ -14,7 +14,7 @@ export default class SearchScreen extends React.Component {
   searchBooks = () => {
     if (this.state.text === '') {
       showMessage({
-        message: 'Cannot search for empty query',
+        message: 'Search query cannot be empty',
       });
       return;
     }

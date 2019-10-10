@@ -1,10 +1,15 @@
 import React from 'react';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 
-import { Input, Wrapper, Flat } from '../components/styled';
+import { Input, Wrapper, Flat, Body } from '../components/styled';
 import AppConfig from '../config/appConfig';
 import { fetchDataHandler } from '../utils/utils';
 import BookCardComponent from '../components/BookCard';
 import BookCardPlaceholder from '../components/BookCardPlaceholder';
+import LottieAnimationComponent from '../components/LottieAnimationComponent';
 
 const { apiEndPoint } = AppConfig;
 
@@ -12,6 +17,7 @@ export default class ResultScreen extends React.Component {
   state = {
     booksList: [...new Array(10).fill({})],
     isDataFetched: false,
+    noResult: false,
   };
 
   componentDidMount() {
@@ -21,9 +27,15 @@ export default class ResultScreen extends React.Component {
   fetchBooks = async () => {
     const { searchQuery } = this.props.navigation.state.params;
 
-    const { items: books } = await fetchDataHandler(
+    const { items: books, totalItems } = await fetchDataHandler(
       `${apiEndPoint}?maxResults=30&q=${searchQuery}`
     );
+
+    if (!totalItems) {
+      this.setState({ noResult: true });
+
+      return;
+    }
 
     const booksList = books.map(book => {
       const {
@@ -102,8 +114,18 @@ export default class ResultScreen extends React.Component {
     );
   };
 
+  renderNoResult = () => (
+    <LottieAnimationComponent
+      style={{
+        height: responsiveHeight(40),
+        width: responsiveHeight(40),
+      }}
+      animationSource={require('../assets/not-found.json')}
+    />
+  );
+
   render() {
-    const { isDataFetched } = this.state;
+    const { isDataFetched, noResult } = this.state;
 
     return (
       <Wrapper>
@@ -117,7 +139,12 @@ export default class ResultScreen extends React.Component {
             marginTop: 10,
           }}
         />
-        {isDataFetched ? this.renderX() : this.renderPlaceholders()}
+        {noResult
+          ? this.renderNoResult()
+          : isDataFetched
+          ? this.renderX()
+          : this.renderPlaceholders()}
+        {}
       </Wrapper>
     );
   }
