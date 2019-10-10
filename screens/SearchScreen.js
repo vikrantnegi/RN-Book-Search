@@ -1,16 +1,24 @@
 import React from 'react';
 import { TouchableOpacity, Platform } from 'react-native';
 import * as Icon from '@expo/vector-icons';
+import { showMessage } from 'react-native-flash-message';
 
 import { Wrapper, Input, Row } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
   state = {
-    text: 'Dan brown',
+    text: '',
   };
 
   searchBooks = () => {
+    if (this.state.text === '') {
+      showMessage({
+        message: 'Cannot search for empty query',
+      });
+      return;
+    }
+
     this.props.navigation.navigate('Result', {
       searchQuery: this.state.text,
     });

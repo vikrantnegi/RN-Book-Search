@@ -8,9 +8,9 @@ import * as Font from 'expo-font';
 import * as Icon from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import FlashMessage from 'react-native-flash-message';
 
 import theme, { ThemeContext } from './config/theme';
-import { Bg } from './components/styled';
 import AppNavigator from './navigation/AppNavigator';
 
 const _makeTheme = (type = 'light') => ({
@@ -85,6 +85,7 @@ export default class App extends React.PureComponent {
         <ThemeProvider theme={this.state.theme === 'light' ? light : dark}>
           <SafeAreaProvider>
             <AppNavigator />
+            <FlashMessage position="bottom" floating />
           </SafeAreaProvider>
         </ThemeProvider>
       </ThemeContext.Provider>
