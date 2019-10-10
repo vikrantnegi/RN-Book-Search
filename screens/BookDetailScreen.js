@@ -9,6 +9,7 @@ import { fetchDataHandler } from '../utils/utils';
 import BookDetailComponent from '../components/BookDetail';
 import AppConfig from '../config/appConfig';
 import BookDetailsPlaceholder from '../components/BookDetailPlaceholder';
+import { Wrapper } from '../components/styled';
 
 const { apiEndPoint } = AppConfig;
 
@@ -78,13 +79,13 @@ class BookDetailScreen extends Component {
     const { isDataFetched, bookData } = this.state;
 
     return (
-      <React.Fragment>
+      <Wrapper>
         {isDataFetched ? (
           <BookDetailComponent bookData={bookData} {...this.props} />
         ) : (
           <BookDetailsPlaceholder />
         )}
-      </React.Fragment>
+      </Wrapper>
     );
   }
 }

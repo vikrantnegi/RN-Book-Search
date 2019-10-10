@@ -22,8 +22,10 @@ export default class ResultScreen extends React.Component {
     const { searchQuery } = this.props.navigation.state.params;
 
     const { items: books } = await fetchDataHandler(
-      `${apiEndPoint}?maxResults=40&q=${searchQuery}`
+      `${apiEndPoint}?maxResults=30&q=${searchQuery}`
     );
+
+    console.log({ books });
 
     const booksList = books.map(book => {
       const {

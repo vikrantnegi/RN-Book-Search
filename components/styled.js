@@ -2,6 +2,7 @@ import { KeyboardAvoidingView, FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { mapToTheme as theme } from 'styled-map';
 import StarRating from 'react-native-star-rating';
+import SafeAreaView from 'react-native-safe-area-view';
 
 export const Row = styled.View`
   flex-direction: row;
@@ -28,7 +29,7 @@ export const Spacer = styled(Block)`
   margin-top: ${theme('spacing')};
 `;
 
-export const Wrapper = styled.View`
+export const Wrapper = styled(SafeAreaView)`
   flex: 1;
   padding-horizontal: ${theme('spacing')};
   background-color: ${props => props.theme.colors.bg};

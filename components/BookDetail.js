@@ -5,7 +5,7 @@ import * as Progress from 'react-native-progress';
 import ProgressiveImage from 'react-native-image-progress';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 import ReadMore from 'react-native-read-more-text';
-import { Body, Rate, Wrapper, Button } from './styled';
+import { Body, Rate, Button, Scroll } from './styled';
 
 class BookDetailComponent extends Component {
   _openLinkToBook = async linkType => {
@@ -45,76 +45,71 @@ class BookDetailComponent extends Component {
     ) : null;
 
     return (
-      <ScrollView
+      <Scroll
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          padding: 10,
-          flexGrow: 1,
-        }}
+        contentContainerStyle={{ padding: 10 }}
       >
-        <Wrapper>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            marginBottom: 15,
+          }}
+        >
+          <ProgressiveImage
+            source={{ uri: medium === null ? thumbnail : medium }}
+            style={styles.albumImage}
+            indicator={Progress.Circle}
+            resizeMode="contain"
+            blurRadius={0}
+            indicatorProps={{
+              size: 28,
+            }}
+          />
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'flex-start',
-              marginBottom: 15,
+              flex: 1,
+              alignSelf: 'center',
             }}
           >
-            <ProgressiveImage
-              source={{ uri: medium === null ? thumbnail : medium }}
-              style={styles.albumImage}
-              indicator={Progress.Circle}
-              resizeMode="contain"
-              blurRadius={0}
-              indicatorProps={{
-                size: 28,
-              }}
-            />
-            <View
-              style={{
-                flex: 1,
-                alignSelf: 'center',
-              }}
-            >
-              <Body small style={styles.detailsHeading}>
-                Title
-              </Body>
-              <Body medium style={styles.details}>
-                {title}
-              </Body>
-              <Body small style={styles.detailsHeading}>
-                Author
-              </Body>
-              <Body medium style={styles.details}>
-                {authors} ({publishedDate})
-              </Body>
-              <Body small style={styles.detailsHeading}>
-                Publisher
-              </Body>
-              <Body medium style={styles.details}>
-                {publisher}
-              </Body>
-              {rating}
-            </View>
-          </View>
-          <ReadMore
-            numberOfLines={5}
-            renderTruncatedFooter={this._renderTruncatedFooter}
-            renderRevealedFooter={this._renderRevealedFooter}
-          >
-            <Body style={styles.cardText}>{description}</Body>
-          </ReadMore>
-          <Button
-            primary
-            width="100%"
-            onPress={() => this._openLinkToBook('infoLink')}
-          >
-            <Body white center noMargin>
-              Read on Play Store
+            <Body small style={styles.detailsHeading}>
+              Title
             </Body>
-          </Button>
-        </Wrapper>
-      </ScrollView>
+            <Body medium style={styles.details}>
+              {title}
+            </Body>
+            <Body small style={styles.detailsHeading}>
+              Author
+            </Body>
+            <Body medium style={styles.details}>
+              {authors} ({publishedDate})
+            </Body>
+            <Body small style={styles.detailsHeading}>
+              Publisher
+            </Body>
+            <Body medium style={styles.details}>
+              {publisher}
+            </Body>
+            {rating}
+          </View>
+        </View>
+        <ReadMore
+          numberOfLines={5}
+          renderTruncatedFooter={this._renderTruncatedFooter}
+          renderRevealedFooter={this._renderRevealedFooter}
+        >
+          <Body style={styles.cardText}>{description}</Body>
+        </ReadMore>
+        <Button
+          primary
+          width="100%"
+          onPress={() => this._openLinkToBook('infoLink')}
+        >
+          <Body white center noMargin>
+            Read on Play Store
+          </Body>
+        </Button>
+      </Scroll>
     );
   }
 }
