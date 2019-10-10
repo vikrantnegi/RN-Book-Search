@@ -2,13 +2,14 @@ import React from 'react';
 import { TouchableOpacity, Platform } from 'react-native';
 import * as Icon from '@expo/vector-icons';
 import { showMessage } from 'react-native-flash-message';
+import SearchBar from 'react-native-material-design-searchbar';
 
 import { Wrapper, Input, Row } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
   state = {
-    text: 'Dan Brown',
+    text: '',
   };
 
   searchBooks = () => {
@@ -28,36 +29,16 @@ export default class SearchScreen extends React.Component {
     return (
       <Wrapper normal style={{ justifyContent: 'center' }}>
         <Logo />
-        <Row>
-          <Input
-            medium
-            value={this.state.text}
-            placeholder="Search Books..."
-            onChangeText={changedText => this.setState({ text: changedText })}
-            style={{
-              flex: 1,
-              paddingRight: 45,
-            }}
-          />
-          <TouchableOpacity
-            style={{
-              position: 'absolute',
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: 50,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            onPress={this.searchBooks}
-          >
-            <Icon.Ionicons
-              name={Platform.OS === 'ios' ? 'ios-search' : 'md-search'}
-              size={30}
-              style={{ marginBottom: -3 }}
-            />
-          </TouchableOpacity>
-        </Row>
+        <SearchBar
+          onSearchChange={changedText => this.setState({ text: changedText })}
+          height={50}
+          onFocus={() => console.log('On Focus')}
+          onBlur={this.searchBooks}
+          placeholder="Search Books..."
+          autoCorrect={false}
+          padding={5}
+          returnKeyType="search"
+        />
       </Wrapper>
     );
   }
