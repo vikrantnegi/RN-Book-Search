@@ -6,7 +6,7 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import { Body, Rate } from './styled';
+import { Body, Rate, BookCard } from './styled';
 
 const BookCardComponent = props => {
   const {
@@ -21,55 +21,55 @@ const BookCardComponent = props => {
   const rating = averageRating ? <Rate rating={averageRating} /> : null;
 
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        flexDirection: 'row',
-        marginVertical: 6,
-        borderRadius: 4,
-      }}
-    >
-      <View
+    <BookCard>
+      <TouchableOpacity
+        onPress={onPress}
         style={{
-          flex: 1,
-          height: responsiveHeight(16),
-          width: responsiveWidth(16),
-          backgroundColor: 'transparent',
-          padding: 2,
+          flexDirection: 'row',
+          padding: 8,
         }}
       >
-        <ProgressiveImage
-          source={{ uri: thumbnail }}
+        <View
           style={{
-            borderRadius: 4,
-            resizeMode: 'contain',
-            height: '100%',
-            width: '100%',
+            flex: 1,
+            height: responsiveHeight(16),
+            width: responsiveWidth(16),
+            marginRight: 10,
           }}
-          imageStyle={{ borderRadius: 4 }}
-          indicator={Progress.Circle}
-          blurRadius={0}
-          indicatorProps={{
-            size: 28,
-          }}
-        />
-      </View>
+        >
+          <ProgressiveImage
+            source={{ uri: thumbnail }}
+            style={{
+              borderRadius: 4,
+              resizeMode: 'contain',
+              height: '100%',
+              width: '100%',
+            }}
+            imageStyle={{ borderRadius: 1 }}
+            indicator={Progress.Circle}
+            blurRadius={0}
+            indicatorProps={{
+              size: 28,
+            }}
+          />
+        </View>
 
-      <View
-        style={{
-          flex: 3,
-          padding: 5,
-        }}
-      >
-        <Body medium bold>
-          {title}
-        </Body>
-        <Body numberOfLines={1} ellipsizeMode="tail">
-          by {authors}
-        </Body>
-        {rating}
-      </View>
-    </TouchableOpacity>
+        <View
+          style={{
+            flex: 3,
+            padding: 5,
+          }}
+        >
+          <Body medium bold>
+            {title}
+          </Body>
+          <Body numberOfLines={1} ellipsizeMode="tail">
+            by {authors}
+          </Body>
+          {rating}
+        </View>
+      </TouchableOpacity>
+    </BookCard>
   );
 };
 

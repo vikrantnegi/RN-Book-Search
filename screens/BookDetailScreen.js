@@ -79,7 +79,7 @@ class BookDetailScreen extends Component {
     const { isDataFetched, bookData } = this.state;
 
     return (
-      <Wrapper>
+      <Wrapper noMargin>
         {isDataFetched ? (
           <BookDetailComponent bookData={bookData} {...this.props} />
         ) : (

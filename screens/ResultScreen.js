@@ -134,7 +134,7 @@ export default class ResultScreen extends React.Component {
       : booksList;
 
     return (
-      <Wrapper>
+      <Wrapper noMargin>
         <Input
           medium
           value={this.state.text}

@@ -8,7 +8,7 @@ import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
   state = {
-    text: '',
+    text: 'Dan Brown',
   };
 
   searchBooks = () => {

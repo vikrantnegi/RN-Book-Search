@@ -15,6 +15,7 @@ const BookCardPlaceholderComponent = () => (
     Animation={ShineOverlay}
     style={{
       marginVertical: 6,
+      marginHorizontal: 10,
       borderRadius: 4,
     }}
     Left={props => (

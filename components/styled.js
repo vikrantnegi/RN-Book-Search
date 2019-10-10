@@ -31,7 +31,7 @@ export const Spacer = styled(Block)`
 
 export const Wrapper = styled(SafeAreaView)`
   flex: 1;
-  padding-horizontal: ${theme('spacing')};
+  margin-horizontal: ${theme('spacing')};
   background-color: ${props => props.theme.colors.bg};
 `;
 
@@ -90,6 +90,13 @@ export const Button = styled.TouchableOpacity`
   margin-top: ${theme('spacing')};
   margin-right: ${props =>
     props.marginRight ? props.theme.spacing.default : 0}
+`;
+
+export const BookCard = styled.View`
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 5px 12px;
 `;
 
 export const Rate = styled(StarRating).attrs(props => ({
