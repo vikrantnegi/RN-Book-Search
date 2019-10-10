@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share } from 'react-native';
+import { useScreens } from 'react-native-screens';
 import { createAppContainer, DrawerItems } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
@@ -8,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import SearchScreen from '../screens/SearchScreen';
 import ResultScreen from '../screens/ResultScreen';
 import BookDetailScreen from '../screens/BookDetailScreen';
+
+useScreens();
 
 const MainStack = createStackNavigator({
   Search: {
