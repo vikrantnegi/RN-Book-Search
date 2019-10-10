@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { mapToTheme as theme } from 'styled-map';
 import StarRating from 'react-native-star-rating';
 import SafeAreaView from 'react-native-safe-area-view';
+import SearchBar from 'react-native-material-design-searchbar';
 
 export const Row = styled.View`
   flex-direction: row;
@@ -98,6 +99,14 @@ export const BookCard = styled.View`
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 5px 12px;
 `;
+
+export const Search = styled(SearchBar).attrs(props => ({
+  autoCorrect: false,
+  placeholder: 'Search Books...',
+  padding: 5,
+  returnKeyType: 'search',
+  height: 50,
+}))``;
 
 export const Rate = styled(StarRating).attrs(props => ({
   disabled: true,

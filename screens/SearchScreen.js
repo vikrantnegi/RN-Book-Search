@@ -4,7 +4,7 @@ import * as Icon from '@expo/vector-icons';
 import { showMessage } from 'react-native-flash-message';
 import SearchBar from 'react-native-material-design-searchbar';
 
-import { Wrapper, Input, Row } from '../components/styled';
+import { Wrapper, Input, Row, Search } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
@@ -29,15 +29,10 @@ export default class SearchScreen extends React.Component {
     return (
       <Wrapper normal style={{ justifyContent: 'center' }}>
         <Logo />
-        <SearchBar
+        <Search
           onSearchChange={changedText => this.setState({ text: changedText })}
-          height={50}
           onFocus={() => console.log('On Focus')}
           onBlur={this.searchBooks}
-          placeholder="Search Books..."
-          autoCorrect={false}
-          padding={5}
-          returnKeyType="search"
         />
       </Wrapper>
     );

@@ -3,9 +3,8 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import SearchBar from 'react-native-material-design-searchbar';
 
-import { Input, Wrapper, Flat, Body } from '../components/styled';
+import { Input, Wrapper, Flat, Body, Search } from '../components/styled';
 import AppConfig from '../config/appConfig';
 import { fetchDataHandler } from '../utils/utils';
 import BookCardComponent from '../components/BookCard';
@@ -136,15 +135,10 @@ export default class ResultScreen extends React.Component {
 
     return (
       <Wrapper noMargin>
-        <SearchBar
+        <Search
           onSearchChange={changedText => this.setState({ text: changedText })}
-          height={50}
           onFocus={() => console.log('On Focus')}
           onBlur={() => {}}
-          placeholder="Search Books..."
-          autoCorrect={false}
-          padding={5}
-          returnKeyType="search"
         />
         {noResult
           ? this.renderNoResult()
