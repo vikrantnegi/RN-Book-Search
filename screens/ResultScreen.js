@@ -18,6 +18,7 @@ export default class ResultScreen extends React.Component {
     booksList: [...new Array(10).fill({})],
     isDataFetched: false,
     noResult: false,
+    text: '',
   };
 
   componentDidMount() {
@@ -99,20 +100,16 @@ export default class ResultScreen extends React.Component {
   renderPlaceholders = () =>
     this.state.booksList.map((e, i) => <BookCardPlaceholder key={i} />);
 
-  renderX = () => {
-    const { booksList } = this.state;
-
-    return (
-      <React.Fragment>
-        <Flat
-          noMargin
-          data={booksList}
-          renderItem={this._renderBookComponent}
-          keyExtractor={item => item.bookId}
-        />
-      </React.Fragment>
-    );
-  };
+  renderX = filteredListData => (
+    <React.Fragment>
+      <Flat
+        noMargin
+        data={filteredListData}
+        renderItem={this._renderBookComponent}
+        keyExtractor={item => item.bookId}
+      />
+    </React.Fragment>
+  );
 
   renderNoResult = () => (
     <LottieAnimationComponent
@@ -125,7 +122,16 @@ export default class ResultScreen extends React.Component {
   );
 
   render() {
-    const { isDataFetched, noResult } = this.state;
+    const { isDataFetched, noResult, text, booksList } = this.state;
+
+    const filteredListData = isDataFetched
+      ? [...booksList].filter(book => {
+          const { title } = book;
+
+          if (text === '') return book;
+          if (title.toLowerCase().includes(text.toLowerCase())) return book;
+        })
+      : booksList;
 
     return (
       <Wrapper>
@@ -142,9 +148,8 @@ export default class ResultScreen extends React.Component {
         {noResult
           ? this.renderNoResult()
           : isDataFetched
-          ? this.renderX()
+          ? this.renderX(filteredListData)
           : this.renderPlaceholders()}
-        {}
       </Wrapper>
     );
   }
