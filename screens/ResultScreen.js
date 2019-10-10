@@ -25,8 +25,6 @@ export default class ResultScreen extends React.Component {
       `${apiEndPoint}?maxResults=30&q=${searchQuery}`
     );
 
-    console.log({ books });
-
     const booksList = books.map(book => {
       const {
         volumeInfo: {
