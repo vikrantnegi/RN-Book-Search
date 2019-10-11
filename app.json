@@ -9,6 +9,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "primaryColor": "#5e72e4",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,10 +21,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.vnapps.rnBookSearch"
+      "bundleIdentifier": "com.VNapps.rnBookSearch"
     },
     "android": {
-      "package": "com.vnapps.rnBookSearch",
+      "package": "com.VNapps.rnBookSearch",
       "permissions": []
     },
     "androidStatusBarColor": "#FAFAFA",
