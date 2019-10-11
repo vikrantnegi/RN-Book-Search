@@ -1,14 +1,11 @@
 {
   "expo": {
     "name": "RN Book Search",
+    "description": "A Book Search book created using React Native",
     "slug": "RNBookSearch",
     "privacy": "public",
     "sdkVersion": "35.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,11 +17,20 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vnapps.rnBookSearch"
+    },
+    "android": {
+      "package": "com.vnapps.rnBookSearch",
+      "permissions": []
+    },
+    "androidStatusBarColor": "#FAFAFA",
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#FAFAFA"
+    },
+    "githubUrl": "https://github.com/vikrantnegi/RN-Book-Search"
   }
 }
