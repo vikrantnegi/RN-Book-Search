@@ -32,7 +32,7 @@ export const Spacer = styled(Block)`
 
 export const Wrapper = styled(SafeAreaView)`
   flex: 1;
-  margin-horizontal: ${theme('spacing')};
+  padding-horizontal: ${theme('spacing')};
   background-color: ${props => props.theme.colors.bg};
 `;
 
