@@ -22,21 +22,17 @@ const MainStack = createStackNavigator(
     },
     BookDetail: {
       screen: BookDetailScreen,
-      // navigationOptions: ({ navigation }) => ({
-      //   headerRight: (
-      //     <Ionicons
-      //       name="md-share"
-      //       title="Share"
-      //       size={24}
-      //       style={{ marginRight: 10, padding: 10 }}
-      //       onPress={() => {}}
-      //     />
-      //   ),
-      // }),
     },
   },
   {
     headerBackTitleVisible: false,
+    defaultNavigationOptions: {
+      headerStyle: {
+        borderBottomWidth: 0,
+        backgroundColor: '#fafafa',
+        elevation: 0,
+      },
+    },
   }
 );
 
