@@ -23,7 +23,6 @@ const light = _makeTheme('light');
 export default class App extends React.PureComponent {
   state = {
     isLoadingComplete: false,
-    hasHydrated: false,
     theme: 'light',
   };
 
@@ -63,13 +62,13 @@ export default class App extends React.PureComponent {
   };
 
   _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true, hasHydrated: true });
+    this.setState({ isLoadingComplete: true });
   };
 
   render() {
-    const { isLoadingComplete, hasHydrated } = this.state;
+    const { isLoadingComplete } = this.state;
 
-    if (!isLoadingComplete && !hasHydrated) {
+    if (!isLoadingComplete) {
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
