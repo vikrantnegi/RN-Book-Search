@@ -1,5 +1,7 @@
 # A Book Search App using React Native
 
+### [Expo Demo Link](https://expo.io/@vikrantnegi/RNBookSearch?release-channel=prod-v1.0.0)
+
 ## Features and TODOs
 
 - [x] [Styled Component](https://www.styled-components.com/docs/basics)
