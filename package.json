@@ -44,8 +44,6 @@
     "react-native-svg": "~9.9.2",
     "react-native-web": "^0.11.7",
     "react-navigation": "^4.0.10",
-    "react-navigation-drawer": "^2.2.2",
-    "react-navigation-fluid-transitions": "^0.3.2",
     "react-navigation-stack": "^1.9.3",
     "rn-placeholder": "^3.0.0",
     "styled-components": "^4.4.0",
