@@ -1,10 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Platform } from 'react-native';
-import * as Icon from '@expo/vector-icons';
+import { KeyboardAvoidingView } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
-import SearchBar from 'react-native-material-design-searchbar';
 
-import { Wrapper, Input, Row, Search } from '../components/styled';
+import { Wrapper, Search } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
@@ -28,12 +26,13 @@ export default class SearchScreen extends React.Component {
   render() {
     return (
       <Wrapper normal style={{ justifyContent: 'center' }}>
-        <Logo />
-        <Search
-          onSearchChange={changedText => this.setState({ text: changedText })}
-          onFocus={() => console.log('On Focus')}
-          onBlur={this.searchBooks}
-        />
+        <KeyboardAvoidingView enabled behavior="position">
+          <Logo />
+          <Search
+            onSearchChange={changedText => this.setState({ text: changedText })}
+            onBlur={this.searchBooks}
+          />
+        </KeyboardAvoidingView>
       </Wrapper>
     );
   }
