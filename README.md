@@ -42,6 +42,10 @@ A React Native native app built using Expo.
 
 - [Google Books APIs](https://developers.google.com/books)
 
+## License
+
+Licensed under the [MIT](https://github.com/vikrantnegi/RN-Book-Search/blob/master/LICENSE).
+
 ## Author
 
 [Vikrant Negi](https://vikrantnegi.com/)
