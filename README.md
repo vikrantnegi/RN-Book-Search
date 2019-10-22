@@ -13,8 +13,8 @@ A React Native native app built using Expo.
 
 ### Video Preview
 
-<a href="https://expo.io/@skempin/lyrics-king">
-<img src="./_github/Search.gif" width="350">
+<a href="https://expo.io/@vikrantnegi/RNBookSearch">
+<img src="./_github/RM-Book-search-v1.0.03.gif" width="350">
 </a>
 
 ### ScreenShots
