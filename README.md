@@ -8,6 +8,7 @@ A React Native native app built using Expo.
 
 - [x] [Styled Component](https://www.styled-components.com/docs/basics)
 - [x] Placeholder components
+- [] Dark Mode
 
 ## App Preview
 
