@@ -14,7 +14,7 @@ A React Native native app built using Expo.
 ### Video Preview
 
 <a href="https://expo.io/@skempin/lyrics-king">
-<img src="./_github/video-preview-v1.0.3.gif" width="350">
+<img src="./_github/Search.gif" width="350">
 </a>
 
 ### ScreenShots
