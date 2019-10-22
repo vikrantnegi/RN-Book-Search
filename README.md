@@ -1,4 +1,6 @@
-# A Book Search App using React Native
+# RN Book Search
+
+A React Native native app built using Expo.
 
 ### [Expo Demo Link](https://expo.io/@vikrantnegi/RNBookSearch)
 
@@ -6,6 +8,20 @@
 
 - [x] [Styled Component](https://www.styled-components.com/docs/basics)
 - [x] Placeholder components
+
+## App Preview
+
+### Video Preview
+
+<a href="https://expo.io/@skempin/lyrics-king">
+<img src="./_github/video-preview-v1.0.3.gif" width="350">
+</a>
+
+### ScreenShots
+
+<img src="./_github/searchScreen.png" width="200"> &nbsp;&nbsp;
+<img src="./_github/resultsScreen.png" width="200"> &nbsp;&nbsp;
+<img src="./_github/detailScreen.png" width="200">
 
 ## Getting Started
 
