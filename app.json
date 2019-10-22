@@ -26,7 +26,16 @@
     "android": {
       "package": "com.VNapps.rnBookSearch",
       "permissions": [],
-      "versionCode": 3
+      "versionCode": 3,
+      "splash": {
+        "backgroundColor": "#ffffff",
+        "resizeMode": "native",
+        "mdpi": "./assets/splash/Splash@1x.png",
+        "hdpi": "./assets/splash/Splash@1.5x.png",
+        "xhdpi": "./assets/splash/Splash@2x.png",
+        "xxhdpi": "./assets/splash/Splash@3x.png",
+        "xxxhdpi": "./assets/splash/Splash@4x.png"
+      }
     },
     "androidStatusBarColor": "#FAFAFA",
     "androidStatusBar": {

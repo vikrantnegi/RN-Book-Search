@@ -1,8 +1,8 @@
 import React from 'react';
-import { KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView, Platform, View, ScrollView } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
 
-import { Wrapper, Search } from '../components/styled';
+import { Search, Wrapper } from '../components/styled';
 import Logo from '../components/Logo';
 
 export default class SearchScreen extends React.Component {
@@ -25,15 +25,19 @@ export default class SearchScreen extends React.Component {
 
   render() {
     return (
-      <Wrapper normal style={{ justifyContent: 'center' }}>
-        <KeyboardAvoidingView enabled behavior="position">
+      <KeyboardAvoidingView
+        enabled
+        behavior={Platform.OS === 'ios' ? 'padding' : null}
+        style={{ flex: 1 }}
+      >
+        <Wrapper normal style={{ justifyContent: 'center' }}>
           <Logo />
           <Search
             onSearchChange={changedText => this.setState({ text: changedText })}
             onBlur={this.searchBooks}
           />
-        </KeyboardAvoidingView>
-      </Wrapper>
+        </Wrapper>
+      </KeyboardAvoidingView>
     );
   }
 }

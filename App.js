@@ -1,9 +1,6 @@
 import React from 'react';
 import { View, Text, Platform, StatusBar } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
 import { ThemeProvider } from 'styled-components';
-import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import * as Icon from '@expo/vector-icons';
 import { AppLoading } from 'expo';
