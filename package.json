@@ -20,6 +20,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@bugsnag/expo": "^6.4.1",
     "@expo/vector-icons": "^10.0.0",
     "expo": "^35.0.0",
     "expo-asset": "~7.0.0",
