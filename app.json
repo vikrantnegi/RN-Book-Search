@@ -5,7 +5,11 @@
     "slug": "RNBookSearch",
     "privacy": "public",
     "sdkVersion": "35.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,7 +22,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.VNapps.rnBookSearch"
@@ -42,6 +48,19 @@
       "barStyle": "dark-content",
       "backgroundColor": "#FAFAFA"
     },
-    "githubUrl": "https://github.com/vikrantnegi/RN-Book-Search"
+    "githubUrl": "https://github.com/vikrantnegi/RN-Book-Search",
+    "extra": {
+      "bugsnag": {
+        "apiKey": "1c07488eccf115775057abea410f9b03"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
+    }
   }
 }
