@@ -42,6 +42,10 @@ A React Native native app built using Expo.
 
 - [Google Books APIs](https://developers.google.com/books)
 
+## Semantic Commit Messages
+
+Follows semantic commit messages. Learn more [here](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716).
+
 ## License
 
 Licensed under the [MIT](https://github.com/vikrantnegi/RN-Book-Search/blob/master/LICENSE).
