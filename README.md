@@ -12,7 +12,7 @@ A React Native native app built using Expo.
 - [ ] Dark Mode
 - [ ] Add Type support (Flow? or Typescript?)
 - [ ] Test Cases (Jest?)
-- [ ] Error reporting (Bugsnag?)
+- [x] Error reporting (Bugsnag)
 - [ ] Offline support
 - [ ] Add animations
 
