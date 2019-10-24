@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
 import { mapToTheme as theme } from 'styled-map';
 import StarRating from 'react-native-star-rating';
@@ -95,8 +95,8 @@ export const Button = styled.TouchableOpacity`
 
 export const BookCard = styled.View`
   border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: ${props => props.theme.colors.cardBg};
+  box-shadow: 1px 2px 5px ${props => props.theme.colors.shadow};
   margin: 5px 12px;
 `;
 
@@ -106,6 +106,9 @@ export const Search = styled(SearchBar).attrs(props => ({
   padding: 5,
   returnKeyType: 'search',
   height: 50,
+  textStyle: {
+    color: props.theme.colors.default,
+  },
 }))``;
 
 export const Rate = styled(StarRating).attrs(props => ({

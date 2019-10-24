@@ -2,7 +2,8 @@ import React from 'react';
 import { useScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Ionicons } from '@expo/vector-icons';
+import { withTheme } from 'styled-components';
+
 import SearchScreen from '../screens/SearchScreen';
 import ResultScreen from '../screens/ResultScreen';
 import BookDetailScreen from '../screens/BookDetailScreen';
@@ -26,14 +27,22 @@ const MainStack = createStackNavigator(
   },
   {
     headerBackTitleVisible: false,
-    defaultNavigationOptions: {
+    defaultNavigationOptions: ({ screenProps }) => ({
       headerStyle: {
         borderBottomWidth: 0,
-        backgroundColor: '#fafafa',
+        backgroundColor: screenProps.colors.bg,
         elevation: 0,
       },
-    },
+    }),
   }
 );
 
-export default createAppContainer(MainStack);
+const AppContainer = createAppContainer(MainStack);
+
+class Navigation extends React.Component {
+  render() {
+    return <AppContainer screenProps={this.props.theme} />;
+  }
+}
+
+export default withTheme(Navigation);

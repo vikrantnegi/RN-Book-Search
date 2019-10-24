@@ -3,24 +3,26 @@ import React from 'react';
 export const ThemeContext = React.createContext(null);
 
 const colors = {
-  white: '#FFFFFF',
-  bg: '#FAFAFA',
+  white: '#fff',
+  bg: '#fafafa',
   primary: '#5e72e4',
-  placeholder: '#9B9B9B',
-  shadow: '#dddddd',
-  subheading: '#6D6D6D',
+  placeholder: '#9b9b9b',
+  shadow: 'rgba(0, 0, 0, 0.1)',
+  subheading: '#6d6d6d',
   error: 'rgba(242, 49, 76, 1)',
   noBg: 'transparent',
+  cardBg: '#fff',
   default: '#333333',
 };
 
 const colorsDark = {
   ...colors,
-  bg: '#222222',
+  bg: '#303030',
   default: '#d3d3d3',
   tabBar: '#333333',
-  shadow: 'rgba(255, 255, 255, 0.25)',
+  shadow: 'rgba(0, 0, 0, 0.1)',
   loadingBg: 'rgba(0, 0, 0, 0.85)',
+  cardBg: '#424242',
 };
 
 const spacing = {
