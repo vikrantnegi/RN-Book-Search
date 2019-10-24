@@ -28,6 +28,7 @@ const MainStack = createStackNavigator(
   {
     headerBackTitleVisible: false,
     defaultNavigationOptions: ({ screenProps }) => ({
+      headerTintColor: screenProps.colors.primary,
       headerStyle: {
         borderBottomWidth: 0,
         backgroundColor: screenProps.colors.bg,
