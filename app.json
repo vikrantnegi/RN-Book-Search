@@ -37,11 +37,11 @@
         "xxxhdpi": "./assets/splash/Splash@4x.png"
       }
     },
-    "androidStatusBarColor": "#FAFAFA",
-    "androidStatusBar": {
-      "barStyle": "dark-content",
-      "backgroundColor": "#FAFAFA"
-    },
+    // "androidStatusBarColor": "#FAFAFA",
+    // "androidStatusBar": {
+    //   "barStyle": "dark-content",
+    //   "backgroundColor": "#FAFAFA"
+    // },
     "githubUrl": "https://github.com/vikrantnegi/RN-Book-Search",
     "extra": {
       "bugsnag": {
