@@ -29,7 +29,7 @@ export default class App extends React.PureComponent {
   };
 
   componentDidMount() {
-    return Platform.OS === 'ios' && this._changeStatusBarStyle();
+    this._changeStatusBarStyle();
   }
 
   toggleTheme = () => {
@@ -43,7 +43,7 @@ export default class App extends React.PureComponent {
 
   _changeStatusBarStyle = () => {
     StatusBar.setBarStyle(
-      this.state.theme === 'light' ? 'default' : 'light-content'
+      this.state.theme === 'light' ? 'dark-content' : 'light-content'
     );
   };
 
