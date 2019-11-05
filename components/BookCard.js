@@ -9,14 +9,7 @@ import {
 import { Body, Rate, BookCard } from './styled';
 
 const BookCardComponent = props => {
-  const {
-    thumbnail,
-    title,
-    authors,
-    publisher,
-    averageRating,
-    onPress,
-  } = props;
+  const { thumbnail, title, authors, averageRating, onPress } = props;
 
   const rating = averageRating ? <Rate rating={averageRating} /> : null;
 
