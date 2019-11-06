@@ -20,6 +20,7 @@ A React Native native app built using Expo.
 - [ ] Offline support
 - [ ] Add animations
 - [ ] Auto detect preferred color scheme (light, dark, or no preference)
+- [ ] Automating App build and Deployment using Fastlane
 
 ## App Preview
 
