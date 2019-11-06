@@ -19,6 +19,7 @@ A React Native native app built using Expo.
 - [x] Error reporting (Bugsnag)
 - [ ] Offline support
 - [ ] Add animations
+- [ ] Auto detect preferred color scheme (light, dark, or no preference)
 
 ## App Preview
 
