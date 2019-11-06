@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-  responsiveHeight,
-  responsiveWidth,
-} from 'react-native-responsive-dimensions';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
 
-import { Input, Wrapper, Flat, Body, Search } from '../components/styled';
+import { Wrapper, Flat, Search } from '../components/styled';
 import AppConfig from '../config/appConfig';
 import { fetchDataHandler } from '../utils/utils';
 import BookCardComponent from '../components/BookCard';
@@ -54,7 +51,7 @@ export default class ResultScreen extends React.Component {
 
       return {
         bookId,
-        thumbnail: imageLinks.thumbnail,
+        thumbnail: imageLinks ? imageLinks.thumbnail : AppConfig.imageNotFound,
         title,
         authors: authors ? authors.toString().replace(/,/g, ', ') : '-',
         publisher: publisher ? publisher.toString().replace(/"/g, '') : '-',
