@@ -28,7 +28,6 @@ class BookDetailScreen extends Component {
 
     const {
       volumeInfo: {
-        categories,
         imageLinks: { medium, large },
         infoLink,
       },
@@ -38,7 +37,6 @@ class BookDetailScreen extends Component {
     const bookData = {
       ...bookDetails,
       images: { medium: medium || null, large: large || null },
-      categories: categories ? categories.toString().replace(/,/g, ', ') : '-',
       infoLink,
       webReaderLink,
     };
