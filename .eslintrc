@@ -1,6 +1,7 @@
 {
   "extends": ["wesbos"],
   "rules": {
+    "global-require": 0,
     "no-use-before-define": 0,
     "no-console": 2,
     "prettier/prettier": ["error"],
