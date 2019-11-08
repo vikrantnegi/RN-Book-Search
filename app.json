@@ -6,7 +6,7 @@
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.5",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "primaryColor": "#5e72e4",
@@ -26,7 +26,7 @@
     "android": {
       "package": "com.VNapps.rnBookSearch",
       "permissions": [],
-      "versionCode": 6,
+      "versionCode": 7,
       "splash": {
         "backgroundColor": "#ffffff",
         "resizeMode": "native",
@@ -37,11 +37,6 @@
         "xxxhdpi": "./assets/splash/Splash@4x.png"
       }
     },
-    // "androidStatusBarColor": "#FAFAFA",
-    // "androidStatusBar": {
-    //   "barStyle": "dark-content",
-    //   "backgroundColor": "#FAFAFA"
-    // },
     "githubUrl": "https://github.com/vikrantnegi/RN-Book-Search",
     "extra": {
       "bugsnag": {
