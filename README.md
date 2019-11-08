@@ -27,7 +27,7 @@ A React Native native app built using Expo.
 ### Video Preview
 
 <a href="https://expo.io/@vikrantnegi/RNBookSearch">
-<img src="./_github/RM-Book-search-v1.0.03.gif" width="350">
+<img src="./_github/RM-Book-search-v1.0.6.gif" width="350">
 </a>
 
 ### ScreenShots
