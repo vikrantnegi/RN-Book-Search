@@ -11,7 +11,7 @@
     "icon": "./assets/icon.png",
     "primaryColor": "#5e72e4",
     "splash": {
-      "image": "./assets/splash/splash.png",
+      "image": "./assets/splash/Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -30,7 +30,7 @@
       "splash": {
         "backgroundColor": "#ffffff",
         "resizeMode": "native",
-        "mdpi": "./assets/splash/Splash@1x.png",
+        "mdpi": "./assets/splash/Splash.png",
         "hdpi": "./assets/splash/Splash@1.5x.png",
         "xhdpi": "./assets/splash/Splash@2x.png",
         "xxhdpi": "./assets/splash/Splash@3x.png",
