@@ -74,18 +74,9 @@ const button = {
   big: 80,
 };
 
-const fontWeight = {
-  light: '300',
-  regular: '400',
-  normal: '500',
-  bold: '700',
-  extrabold: '900',
-  default: '500',
-  consi: '400',
-  //
-  big: '700',
-  large: '700',
-  xlarge: '700',
+const font = {
+  default: 'open-sans-regular',
+  bold: 'open-sans-bold',
 };
 
 const avatar = {
@@ -108,7 +99,7 @@ export default (theme = 'light') => ({
   spacing,
   layout,
   size,
-  fontWeight,
+  font,
   avatar,
   height,
   flexAlign,

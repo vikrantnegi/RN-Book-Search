@@ -70,19 +70,19 @@ class BookDetailComponent extends Component {
                 alignSelf: 'center',
               }}
             >
-              <Body small style={styles.detailsHeading}>
+              <Body small bold style={styles.detailsHeading}>
                 Title
               </Body>
               <Body medium style={styles.details}>
                 {title}
               </Body>
-              <Body small style={styles.detailsHeading}>
+              <Body small bold style={styles.detailsHeading}>
                 Author
               </Body>
               <Body medium style={styles.details}>
                 {authors} ({publishedDate})
               </Body>
-              <Body small style={styles.detailsHeading}>
+              <Body small bold style={styles.detailsHeading}>
                 Publisher
               </Body>
               <Body medium style={styles.details}>

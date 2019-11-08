@@ -58,7 +58,7 @@ export const Flat = styled(Scroll)`
 
 export const Body = styled.Text`
   font-size: ${theme('size')};
-  font-weight: ${theme('fontWeight')};
+  font-family: ${theme('font')};
   color: ${theme('colors')};
   margin-bottom: ${theme('spacing')};
   margin-top: ${props => props.marginTop || 0};

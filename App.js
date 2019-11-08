@@ -52,8 +52,9 @@ export default class App extends React.PureComponent {
       Font.loadAsync({
         // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
+        // Feel free to remove this if you are not using it in your app
+        'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+        'open-sans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),
       }),
     ]);
 
