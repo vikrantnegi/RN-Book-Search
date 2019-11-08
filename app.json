@@ -11,7 +11,7 @@
     "icon": "./assets/icon.png",
     "primaryColor": "#5e72e4",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
