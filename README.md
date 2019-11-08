@@ -12,7 +12,7 @@ A React Native native app built using Expo.
 
 - [x] [Styled Component](https://www.styled-components.com/docs/basics)
 - [x] Placeholder components
-- [ ] Custom fonts
+- [x] Custom fonts
 - [x] Dark Mode
 - [ ] Add Type support (Flow? or Typescript?)
 - [ ] Test Cases (Jest?)
