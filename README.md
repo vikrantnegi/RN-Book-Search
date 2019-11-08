@@ -34,15 +34,15 @@ A React Native native app built using Expo.
 
 #### Light Mode
 
-<img src="./_github/searchScreen.png" width="200"> &nbsp;&nbsp;
-<img src="./_github/resultsScreen.png" width="200"> &nbsp;&nbsp;
-<img src="./_github/detailScreen.png" width="200">
+<img src="./_github/searchScreen.jpg" width="200"> &nbsp;&nbsp;
+<img src="./_github/resultsScreen.jpg" width="200"> &nbsp;&nbsp;
+<img src="./_github/detailScreen.jpg" width="200">
 
 #### Dark Mode
 
-<img src="./_github/searchScreen-dark.png" width="200"> &nbsp;&nbsp;
-<img src="./_github/resultsScreen-dark.png" width="200"> &nbsp;&nbsp;
-<img src="./_github/detailScreen-dark.png" width="200">
+<img src="./_github/searchScreen-dark.jpg" width="200"> &nbsp;&nbsp;
+<img src="./_github/resultsScreen-dark.jpg" width="200"> &nbsp;&nbsp;
+<img src="./_github/detailScreen-dark.jpg" width="200">
 
 ## Getting Started
 
