@@ -22,6 +22,8 @@ A React Native native app built using Expo.
 - [ ] Auto detect preferred color scheme (light, dark, or no preference)
 - [ ] Automating App build and Deployment using Fastlane
 
+---
+
 ## App Preview
 
 ### Video Preview
@@ -44,6 +46,8 @@ A React Native native app built using Expo.
 <img src="./_github/resultsScreen-dark.jpg" width="200"> &nbsp;&nbsp;
 <img src="./_github/detailScreen-dark.jpg" width="200">
 
+---
+
 ## Getting Started
 
 1. Install the latest Node
@@ -52,17 +56,32 @@ A React Native native app built using Expo.
 4. `npm install` or `yarn install`
 5. Run `expo start`
 
+---
+
 ## API's Used
 
 - [Google Books APIs](https://developers.google.com/books)
+
+---
+
+## FAQ
+
+- **Why does the app has large size?**
+  - Unfortunately Expo apps has large size as they includes a bunch of APIs regardless whether or not you are using them. Expo team is working on making Expo apps [leaner](https://expo.canny.io/feature-requests/p/reducing-app-size).
+
+---
 
 ## Semantic Commit Messages
 
 Follows semantic commit messages. Learn more [here](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716).
 
+---
+
 ## License
 
 Licensed under the [MIT](https://github.com/vikrantnegi/RN-Book-Search/blob/master/LICENSE).
+
+---
 
 ## Author
 
