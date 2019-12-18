@@ -5,12 +5,8 @@
     "slug": "RNBookSearch",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.6",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "primaryColor": "#5e72e4",
@@ -22,9 +18,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.VNapps.rnBookSearch"
@@ -32,7 +26,7 @@
     "android": {
       "package": "com.VNapps.rnBookSearch",
       "permissions": [],
-      "versionCode": 7,
+      "versionCode": 8,
       "splash": {
         "backgroundColor": "#ffffff",
         "resizeMode": "native",
