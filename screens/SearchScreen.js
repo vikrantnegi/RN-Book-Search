@@ -53,6 +53,7 @@ class SearchScreen extends React.Component {
                       top: insets.top + 10,
                       right: 25,
                       justifyContent: 'center',
+                      zIndex: 1,
                     }}
                   >
                     <Ionicons

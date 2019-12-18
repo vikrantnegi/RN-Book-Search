@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
-import * as Progress from 'react-native-progress';
 import ProgressiveImage from 'react-native-image-progress';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 import ReadMore from 'react-native-read-more-text';
@@ -57,7 +56,6 @@ class BookDetailComponent extends Component {
             <ProgressiveImage
               source={{ uri: medium === null ? thumbnail : medium }}
               style={styles.albumImage}
-              indicator={Progress.Circle}
               resizeMode="contain"
               blurRadius={0}
               indicatorProps={{

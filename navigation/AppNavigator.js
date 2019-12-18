@@ -1,5 +1,5 @@
 import React from 'react';
-import { useScreens } from 'react-native-screens';
+import { enableScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { withTheme } from 'styled-components';
@@ -8,7 +8,7 @@ import SearchScreen from '../screens/SearchScreen';
 import ResultScreen from '../screens/ResultScreen';
 import BookDetailScreen from '../screens/BookDetailScreen';
 
-useScreens();
+enableScreens();
 
 const MainStack = createStackNavigator(
   {

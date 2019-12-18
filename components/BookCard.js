@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import * as Progress from 'react-native-progress';
+import { View, TouchableOpacity } from 'react-native';
 import ProgressiveImage from 'react-native-image-progress';
 import {
   responsiveHeight,
@@ -39,7 +38,6 @@ const BookCardComponent = props => {
               width: '100%',
             }}
             imageStyle={{ borderRadius: 1 }}
-            indicator={Progress.Circle}
             blurRadius={0}
             indicatorProps={{
               size: 28,

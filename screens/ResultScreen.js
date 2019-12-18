@@ -35,7 +35,7 @@ export default class ResultScreen extends React.Component {
       return;
     }
 
-    const booksList = books.map(book => {
+    const allBooksList = books.map(book => {
       const {
         volumeInfo: {
           title,
@@ -60,6 +60,13 @@ export default class ResultScreen extends React.Component {
         averageRating,
       };
     });
+
+    const booksList = Object.values(
+      allBooksList.reduce(
+        (acc, cur) => Object.assign(acc, { [cur.bookId]: cur }),
+        {}
+      )
+    );
 
     this.setState({
       booksList,
