@@ -4,8 +4,12 @@
     "description": "A Book Search book created using React Native",
     "slug": "RNBookSearch",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
-    "platforms": ["ios", "android", "web"],
+    "sdkVersion": "37.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,7 +22,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.VNapps.rnBookSearch"
