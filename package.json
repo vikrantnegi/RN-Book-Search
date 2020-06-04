@@ -38,7 +38,7 @@
     "react-native-reanimated": "~1.7.0",
     "react-native-responsive-dimensions": "^3.0.0",
     "react-native-safe-area-context": "0.7.3",
-    "react-native-safe-area-view": "^1.0.0",
+    "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "~2.2.0",
     "react-native-star-rating": "^1.1.0",
     "react-native-svg": "12.1.0",
