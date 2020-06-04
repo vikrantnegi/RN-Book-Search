@@ -41,7 +41,7 @@
     "react-native-safe-area-view": "^1.0.0",
     "react-native-screens": "~2.2.0",
     "react-native-star-rating": "^1.1.0",
-    "react-native-svg": "11.0.1",
+    "react-native-svg": "12.1.0",
     "react-native-web": "^0.11.7",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.9.3",
