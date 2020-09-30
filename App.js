@@ -1,9 +1,11 @@
+import 'react-native-gesture-handler';
 import bugsnag from '@bugsnag/expo';
 import React from 'react';
 import { Platform, StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import * as Font from 'expo-font';
 import * as Icon from '@expo/vector-icons';
+
 import { AppLoading } from 'expo';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import FlashMessage from 'react-native-flash-message';

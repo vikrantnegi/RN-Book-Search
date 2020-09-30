@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Updates } from 'expo';
+import * as Updates from 'expo-updates';
 
 import { Wrapper } from './styled';
 
