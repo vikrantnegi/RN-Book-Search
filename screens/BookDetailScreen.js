@@ -24,7 +24,7 @@ class BookDetailScreen extends Component {
   };
 
   _fetchBookData = async () => {
-    const { bookDetails } = this.props.navigation.state.params;
+    const { bookDetails } = this.props.route.params;
 
     const {
       volumeInfo: {
