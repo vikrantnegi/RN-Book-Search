@@ -5,7 +5,7 @@
     "slug": "RNBookSearch",
     "privacy": "public",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.9",
+    "version": "1.0.10",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "primaryColor": "#5e72e4",
@@ -25,7 +25,7 @@
     "android": {
       "package": "com.VNapps.rnBookSearch",
       "permissions": [],
-      "versionCode": 10,
+      "versionCode": 11,
       "splash": {
         "backgroundColor": "#ffffff",
         "resizeMode": "native",
