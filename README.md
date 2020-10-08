@@ -49,7 +49,7 @@ A React Native app built using Expo.
 
 ---
 
-## Getting Started
+## Getting Started guide:
 
 1. Install the latest Node
 2. Install [Expo](https://expo.io/) - `npm install expo-cli --global`
@@ -59,31 +59,31 @@ A React Native app built using Expo.
 
 ---
 
-## API's Used
+## API's Used:
 
 - [Google Books APIs](https://developers.google.com/books)
 
 ---
 
-## FAQ
+## FAQ:
 
 - **Why does the app has large size?**
   - Unfortunately Expo apps has large size as they includes a bunch of APIs regardless whether or not you are using them. Expo team is working on making Expo apps [leaner](https://expo.canny.io/feature-requests/p/reducing-app-size).
 
 ---
 
-## Semantic Commit Messages
+## Semantic Commit Messages:
 
 Follows semantic commit messages. Learn more [here](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716).
 
 ---
 
-## License
+## License:
 
 Licensed under the [MIT](https://github.com/vikrantnegi/RN-Book-Search/blob/master/LICENSE).
 
 ---
 
-## Author
+## Author:
 
 [Vikrant Negi](https://vikrantnegi.com/)
