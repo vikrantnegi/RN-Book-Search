@@ -1,7 +1,8 @@
 # RN Book Search
 
-A React Native native app built using Expo.
+A React Native app built using Expo.
 
+## Now available on Google Play Store
 <a href="https://play.google.com/store/apps/details?id=com.VNapps.rnBookSearch">
   <img alt="Get it on Google Play" title="Google Play" src="./_github/play-store.png" height="40">
 </a>
